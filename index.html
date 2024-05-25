@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionales</title>
+</head>
+<style>
+    img{
+        max-width: 100%;
+    }
+    #caja2{
+        display: none;
+        width: 250px;
+    }
+</style>
+<script type="text/javascript">
+    window.onload=inicio;
+    var intentos=0;
+    function inicio(){
+        document.getElementById("boton1").addEventListener("click",evaluar);
+    }
+
+    function evaluar(){
+        let nombre = document.getElementById("nombre").value.toLowerCase();
+        let edad = Number(document.getElementById("edad").value);
+
+        if(nombre=="ataulfo" || nombre == "ataúlfo"){
+            location.href="https://wikipedia.org/wiki/Ervigio";
+        } else if(nombre=="ervigio" && edad == 680){
+            document.getElementById("caja1").style.display="none";
+            document.getElementById("caja2").style.display="block";
+        } else {
+            alert("No te conozco");
+            if (edad!=680){
+                document.getElementById("edad").value="";
+                document.getElementById("edad").focus();
+            }
+            if (nombre!="ervigio"){
+                document.getElementById("nombre").value="";
+                document.getElementById("nombre").focus();
+            }
+            intentos++;
+            if (intentos>3){
+                location.href="https://wikipedia.org/wiki/Ervigio";
+            }
+        }
+    }
+</script>
+<body>
+    <div id="caja1">
+        <input id="nombre" autofocus>
+        <input id="edad" type="number">
+        <button id="boton1">Aceptar</button>
+    </div>
+
+    <div id="caja2">
+        <img src="img/news1.jpg" alt="tenedor lapiz">
+        <button id="menos">-</button>
+        <div id="cantidad"></div>
+        <button id="mas">+</button>
+    </div>
+
+    <!-- VOY MINUTO 14 -->
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>

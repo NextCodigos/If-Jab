@@ -1,0 +1,18 @@
+img {
+    max-width: 100%;
+}
+
+#caja2 {
+    display: none;
+    width: 250px;
+}
+
+#cantidad {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+}
+
+button {
+    margin: 5px;
+}
